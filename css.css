@@ -2,3 +2,8 @@ p {
 	font-family: Arial;
 	
 }
+body{
+	background-image: url("Backroundsbild.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
