@@ -10,12 +10,46 @@
 <%
     }
 %>-->
-<script type="text/javascript" src="script.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 <script>
- $(document).ready(function(){
+  $(document).ready(function(){
     alert('Starting');
   });
+</script>
+<script>
+var main = function() {
+ $('.btn').click(function() {
+   var post = $('.status-box').val();
+   $('<li>').text(post).prependTo('.posts');
+   $('.status-box').val('');
+   $('.counter').text('140');
+   $('.btn').addClass('disabled');
+ });
+$('.status-box').keyup(function() {
+   var postLength = $(this).val().length;
+   var charactersLeft = 140 - postLength;
+   $('.counter').text(charactersLeft);
+});
+}
+$(document).ready(main);
+
+$('.status-box').keyup(function() {
+ var postLength = $(this).val().length;
+ var charactersLeft = 140 - postLength;
+ $('.counter').text(charactersLeft);
+
+ if(charactersLeft < 0) {
+   $('.btn').addClass('disabled'); 
+ }
+ else if(charactersLeft == 140) {
+   $('.btn').addClass('disabled');
+ }
+ else {
+   $('.btn').removeClass('disabled');
+ }
+});
+
+$('.btn').addClass('disabled');
 </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
