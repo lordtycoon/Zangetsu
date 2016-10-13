@@ -2,8 +2,21 @@ p {
 	font-family: Arial;
 	
 }
-body{
-	background-image: url("Backroundsbild.jpg");
-	background-repeat: no-repeat;
+
+head {
+    width: 100%;
+    height: auto;
+    background-image: url('Backroundsbild.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+	background-size: cover;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    background-image: url('Backroundsbild-2.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
 	background-size: cover;
 }
