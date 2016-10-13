@@ -3,20 +3,14 @@ p {
 	
 }
 
-head {
+/*body {
     width: 100%;
-    height: auto;
-    background-image: url('Backroundsbild.jpg');
+    background-image: url("Backroundsbild-full.jpg");
     background-repeat: no-repeat;
     background-size: contain;
 	background-size: cover;
-}
+}*/
 
 body {
-    width: 100%;
-    height: auto;
-    background-image: url('Backroundsbild-2.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
-	background-size: cover;
+    background-color: #222222;
 }
