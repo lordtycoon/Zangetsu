@@ -1,0 +1,1 @@
+curl -H 'User-Agent: cURL' --data '{"scopes": ["repo", "user"], "note": "Zangetsu"}' --user lordtycoon https://api.github.com/authorizations
