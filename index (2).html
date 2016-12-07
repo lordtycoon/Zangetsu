@@ -25,6 +25,7 @@ Rush
 <h2 class="sasserif" style="color:blue;">Welcome</h2>
 
 </div>
+<!DOCTYPE html>
 <html ng-app='app'>
 <head>
    <meta charset="utf-8">
@@ -37,11 +38,13 @@ Rush
     
        app.controller('MainCtrl', function($http){
             var vm = this;
-        
+            vm.data = false;
             vm.fetchData = function(user){
                 vm.loading = true;
-                $http.get('http//:api.github.com/users/' + user.name).then(function(res){                
+                $http.get('http://api.github.com/users/' + user.name).then(function(res){                
                     vm.data = res;
+                    vm.name = res.data.name || 'Not found';
+                    vm.location = res.data.location || 'Not found';
                     vm.loading = false;
                 })
            }
@@ -53,8 +56,9 @@ Rush
     <input type="text" ng-model="user.name" name="enter">
     <button ng-click="vm.fetchData(user)">Go!</button>
         <h4 ng-if="vm.loading === true">Loading...</h4>
-    <h3>{{vm.data}}</h3>
+    <h3 ng-hide="vm.data === false">{{vm.data}} --- {{vm.location}}</h3>
 </body>
+</html>
 
 
 <footer class="container-fluid text-center">
